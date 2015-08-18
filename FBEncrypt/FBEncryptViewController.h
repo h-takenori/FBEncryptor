@@ -26,12 +26,12 @@
     
 }
 
-@property (nonatomic, retain) IBOutlet UITextView* message;
-@property (nonatomic, retain) IBOutlet UITextView* encrypted;
-@property (nonatomic, retain) IBOutlet UITextView* decrypted;
-@property (nonatomic, retain) IBOutlet UITextField* key;
-@property (nonatomic, retain) IBOutlet UIScrollView* scrollView;
-@property (nonatomic, retain) IBOutlet UISwitch* separateline;
+@property (nonatomic, strong) IBOutlet UITextView* message;
+@property (nonatomic, strong) IBOutlet UITextView* encrypted;
+@property (nonatomic, strong) IBOutlet UITextView* decrypted;
+@property (nonatomic, strong) IBOutlet UITextField* key;
+@property (nonatomic, strong) IBOutlet UIScrollView* scrollView;
+@property (nonatomic, strong) IBOutlet UISwitch* separateline;
 
 - (IBAction)encrypt:(id)sender;
 - (IBAction)decrypt:(id)sender;

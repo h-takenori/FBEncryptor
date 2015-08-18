@@ -32,10 +32,6 @@
 @synthesize scrollView;
 @synthesize separateline;
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		410001D11B83046C00613BF7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 410001D01B83046C00613BF7 /* Default-568h@2x.png */; };
 		4C1000A5139324DB00C9257E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1000A4139324DB00C9257E /* UIKit.framework */; };
 		4C1000A7139324DB00C9257E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1000A6139324DB00C9257E /* Foundation.framework */; };
 		4C1000A9139324DB00C9257E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1000A8139324DB00C9257E /* CoreGraphics.framework */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		410001D01B83046C00613BF7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4C1000A0139324DB00C9257E /* FBEncryptor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBEncryptor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C1000A4139324DB00C9257E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C1000A6139324DB00C9257E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -93,6 +95,7 @@
 		4C100095139324DA00C9257E = {
 			isa = PBXGroup;
 			children = (
+				410001D01B83046C00613BF7 /* Default-568h@2x.png */,
 				4C7E35C313974826000D7909 /* README.md */,
 				4C1000DD139324F300C9257E /* FBEncryptor */,
 				4C1000AA139324DB00C9257E /* Test Application */,
@@ -215,13 +218,16 @@
 			name = FBEncryptorTests;
 			productName = FBEncryptTests;
 			productReference = 4C1000C4139324DB00C9257E /* FBEncryptorTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		4C100097139324DA00C9257E /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+			};
 			buildConfigurationList = 4C10009A139324DA00C9257E /* Build configuration list for PBXProject "FBEncryptor" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -246,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C1000AF139324DB00C9257E /* InfoPlist.strings in Resources */,
+				410001D11B83046C00613BF7 /* Default-568h@2x.png in Resources */,
 				4C1000B8139324DB00C9257E /* MainWindow.xib in Resources */,
 				4C1000BE139324DB00C9257E /* FBEncryptViewController.xib in Resources */,
 			);
@@ -350,7 +357,6 @@
 		4C1000D5139324DB00C9257E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -359,7 +365,8 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -367,13 +374,12 @@
 		4C1000D6139324DB00C9257E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 			};
@@ -383,10 +389,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FBEncrypt/FBEncryptor-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "FBEncrypt/FBEncryptor-Info.plist";
 				PRODUCT_NAME = FBEncryptor;
 				WRAPPER_EXTENSION = app;
@@ -397,9 +405,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FBEncrypt/FBEncryptor-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "FBEncrypt/FBEncryptor-Info.plist";
 				PRODUCT_NAME = FBEncryptor;
 				VALIDATE_PRODUCT = YES;
@@ -412,12 +422,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FBEncryptor.app/FBEncryptor";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FBEncryptTests/FBEncryptorTests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "FBEncryptTests/FBEncryptorTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -434,12 +446,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FBEncryptor.app/FBEncryptor";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FBEncryptTests/FBEncryptorTests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "FBEncryptTests/FBEncryptorTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
